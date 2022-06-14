@@ -10,50 +10,58 @@ value: 1
 
 [tmc2209 stepper_x]
 uart_pin: PE0
-interpolate: false
-run_current: 0.8
+interpolate: True
+run_current: 1.4
+hold_current: 0.8
 sense_resistor: 0.110
-stealthchop_threshold: 250
+stealthchop_threshold: 0
 
 [tmc2209 stepper_y]
 uart_pin: PD3
-interpolate: false
-run_current: 0.8
+interpolate: True
+run_current: 1.4
+hold_current: 0.8
 sense_resistor: 0.110
-stealthchop_threshold: 250
+stealthchop_threshold: 0
 
 [tmc2209 stepper_z]
 uart_pin: z:PE0
-interpolate: false
-run_current: 0.8
+interpolate: true
+run_current: 0.6
+hold_current: 0.4
 sense_resistor: 0.110
 stealthchop_threshold: 0
 
 [tmc2209 stepper_z1]
 uart_pin: z:PD3
-interpolate: false
-run_current: 0.8
+interpolate: true
+run_current: 0.6
+hold_current: 0.4
 sense_resistor: 0.110
 stealthchop_threshold: 0
 
 [tmc2209 stepper_z2]
 uart_pin: z:PD0
-interpolate: false
-run_current: 0.8
+interpolate: true
+run_current: 0.6
+hold_current: 0.4
 sense_resistor: 0.110
 stealthchop_threshold: 0
 
 [tmc2209 stepper_z3]
 uart_pin: z:PC6
-interpolate: false
-run_current: 0.8
+interpolate: true
+run_current: 0.6
+hold_current: 0.4
 sense_resistor: 0.110
 stealthchop_threshold: 0
 
 [tmc2209 extruder]
 uart_pin: head0:PA13
-interpolate: false
-run_current: 0.5
+interpolate: True
+run_current: 0.7
+sense_resistor: 0.110
+hold_current: 0.42
 stealthchop_threshold: 0
 
 [tmc2209 manual_stepper gear_stepper]
