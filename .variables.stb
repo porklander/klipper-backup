@@ -1,3 +1,4 @@
 [Variables]
 filament_sensor = {u'filament_sensor': 0}
+plates = {'index': 0, 'array': [{'name': u'New', 'offset': 0.0}]}
 
