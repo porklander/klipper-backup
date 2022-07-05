@@ -13,7 +13,7 @@ cd ~/klipper
 echo "Start update EBB"
 echo ""
 make clean
-make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
+#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
 make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
 read -p "EBB firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
 cd ~/CanBoot/scripts
@@ -25,6 +25,7 @@ echo ""
 # Update mcu rpi
 echo "Start update mcu rpi"
 echo ""
+cd ~/klipper
 make clean
 #make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.linux_mcu
 make KCONFIG=/home/pi/klipper_config/script/config.linux_mcu
