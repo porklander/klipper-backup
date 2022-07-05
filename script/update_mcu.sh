@@ -2,6 +2,9 @@
 
 yes | cp /home/pi/klipper_config/script/board_defs.py /home/pi/klipper/scripts/spi_flash/board_defs.py -iR
 yes | cp /home/pi/klipper_config/script/ercf.py /home/pi/klipper/klippy/extras/ercf.py -iR
+yes | cp /home/pi/klipper_config/script/exclude_object.py /home/pi/klipper/klippy/extras/exclude_object.py -iR
+yes | cp /home/pi/klipper_config/script/tuning_tower.py /home/pi/klipper/klippy/extras/tuning_tower.py -iR
+yes | cp /home/pi/klipper_config/script/virtual_sdcard.py /home/pi/klipper/klippy/extras/virtual_sdcard.py -iR
 
 cd ~/klipper
 #git pull
