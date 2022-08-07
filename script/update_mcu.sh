@@ -1,10 +1,10 @@
 #!/bin/bash
 
-yes | cp /home/pi/klipper_config/script/board_defs.py /home/pi/klipper/scripts/spi_flash/board_defs.py -iR
+#yes | cp /home/pi/klipper_config/script/board_defs.py /home/pi/klipper/scripts/spi_flash/board_defs.py -iR
 yes | cp /home/pi/klipper_config/script/ercf.py /home/pi/klipper/klippy/extras/ercf.py -iR
-yes | cp /home/pi/klipper_config/script/exclude_object.py /home/pi/klipper/klippy/extras/exclude_object.py -iR
-yes | cp /home/pi/klipper_config/script/tuning_tower.py /home/pi/klipper/klippy/extras/tuning_tower.py -iR
-yes | cp /home/pi/klipper_config/script/virtual_sdcard.py /home/pi/klipper/klippy/extras/virtual_sdcard.py -iR
+#yes | cp /home/pi/klipper_config/script/exclude_object.py /home/pi/klipper/klippy/extras/exclude_object.py -iR
+#yes | cp /home/pi/klipper_config/script/tuning_tower.py /home/pi/klipper/klippy/extras/tuning_tower.py -iR
+#yes | cp /home/pi/klipper_config/script/virtual_sdcard.py /home/pi/klipper/klippy/extras/virtual_sdcard.py -iR
 
 cd ~/klipper
 #git pull
@@ -13,11 +13,11 @@ cd ~/klipper
 echo "Start update EBB"
 echo ""
 make clean
-#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
+make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
 make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
 #read -p "EBB firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
 cd ~/CanBoot/scripts
-python3 flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u ba51b493cff4
+python3 flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 6281f291f6c4
 #read -p "EBB firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
 echo "Finish update EBB"
 echo ""

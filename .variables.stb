@@ -1,4 +1,4 @@
 [Variables]
-filament_sensor = {u'toolhead_sensor': 1, u'filament_sensor': 0, u'encoder_sensor': 1}
-plates = {'index': 1, 'array': [{'name': u'PEI_glatt', 'offset': 0.0}, {'name': u'PEI_texture', 'offset': -0.1}]}
+filament_sensor = {'toolhead_sensor': 1, 'filament_sensor': 0, 'encoder_sensor': 1}
+plates = {'index': 1, 'array': [{'name': 'PEI_glatt', 'offset': 0.0}, {'name': 'PEI_texture', 'offset': -0.1}]}
 
