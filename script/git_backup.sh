@@ -66,7 +66,7 @@ push_config(){
   git add . -v
   current_date=$(date +"%Y-%m-%d %T")
   git commit -m "Backup triggered on $current_date" -m "$m1" -m "$m2" -m "$m3" -m "$m4"
-  git push "https://github.com/porklander/klipper-backup"
+  git push "github.com/porklander/klipper-backup"
 }
 
 grab_version
