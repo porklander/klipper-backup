@@ -1,11 +1,9 @@
 [server]
 host = 0.0.0.0
 port = 7125
-enable_debug_logging = False
 klippy_uds_address = /tmp/klippy_uds
 
 [database]
-database_path = /home/pi/.moonraker_database
 
 [authorization]
 trusted_clients = 
@@ -17,6 +15,7 @@ trusted_clients =
 	192.168.0.0/16
 	FE80::/10
 	::1/128
+	192.168.178.110
 cors_domains = 
 	*.lan
 	*.local
@@ -26,8 +25,6 @@ cors_domains =
 force_logins = False
 
 [file_manager]
-config_path = /home/pi/klipper_config
-log_path = /home/pi/klipper_logs
 
 [octoprint_compat]
 
@@ -36,7 +33,6 @@ log_path = /home/pi/klipper_logs
 [timelapse]
 
 [update_manager]
-enable_repo_debug = True
 enable_auto_refresh = True
 enable_system_updates = True
 refresh_interval = 24
@@ -67,4 +63,10 @@ path = ~/sonar
 origin = https://github.com/mainsail-crew/sonar.git
 primary_branch = main
 managed_services = sonar
+
+[update_manager CanBoot]
+type = git_repo
+origin = https://github.com/Arksine/Canboot.git
+path = ~/CanBoot
+is_system_service = False
 
