@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yes | cp /home/pi/klipper_config/script/ercf.py /home/pi/klipper/klippy/extras/ercf.py -iR
+#yes | cp /home/pi/klipper_config/script/ercf.py /home/pi/klipper/klippy/extras/ercf.py -iR
 
 cd ~/klipper
 #git pull
@@ -12,7 +12,7 @@ sudo service klipper stop
 echo "Start update EBB"
 echo ""
 make clean
-make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
+#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
 make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
 #read -p "EBB firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
 cd ~/CanBoot/scripts
@@ -29,6 +29,7 @@ make clean
 #make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.linux_mcu
 make KCONFIG=/home/pi/klipper_config/script/config.linux_mcu
 #read -p "mcu rpi firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
+sudo service klipper stop
 make flash KCONFIG_CONFIG=/home/pi/klipper_config/script/config.linux_mcu
 echo "Finish update mcu rpi"
 echo ""
