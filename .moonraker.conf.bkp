@@ -25,6 +25,7 @@ cors_domains =
 force_logins = False
 
 [file_manager]
+enable_object_processing = True
 
 [octoprint_compat]
 
