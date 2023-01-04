@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#yes | cp /home/pi/klipper_config/script/ercf.py /home/pi/klipper/klippy/extras/ercf.py -iR
-
 cd ~/klipper
 #git pull
 
@@ -9,16 +7,16 @@ sudo service klipper stop
 
 
 # Update head0
-echo "Start update EBB"
+echo "Start update SB2040"
 echo ""
 make clean
-#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
-make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ebb
-#read -p "EBB firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
+#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.sb2040
+make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.sb2040
+#read -p "sb2040 firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
 cd ~/CanBoot/scripts
-python3 flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 6281f291f6c4
-#read -p "EBB firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
-echo "Finish update EBB"
+python3 flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u b3b97721329d
+#read -p "sb2040 firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
+echo "Finish update sb2040"
 echo ""
 
 # Update mcu rpi
