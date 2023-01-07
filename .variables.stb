@@ -11,9 +11,9 @@ ercf_calib_6 = 1.0
 ercf_calib_7 = 1.0
 ercf_calib_8 = 1.0
 ercf_calib_9 = 1.0
-ercf_calib_clog_length = 1.4
-ercf_calib_ref = 883.6
+ercf_calib_clog_length = 6.8
+ercf_calib_ref = 1042.3
 ercf_calib_version = 3
-filament_sensor = {'toolhead_sensor': 1, 'filament_sensor': 0, 'encoder_sensor': 1}
+filament_sensor = {'toolhead_sensor': 0, 'filament_sensor': 0, 'encoder_sensor': 1}
 plates = {'index': 0, 'array': [{'name': 'PEI_glatt', 'offset': 0.0}, {'name': 'PEI_texture', 'offset': -0.1}]}
 
