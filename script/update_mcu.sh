@@ -10,7 +10,7 @@ sudo service klipper stop
 echo "Start update SB2040"
 echo ""
 make clean
-#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.sb2040
+make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.sb2040
 make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.sb2040
 #read -p "sb2040 firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
 cd ~/CanBoot/scripts
@@ -36,7 +36,7 @@ echo ""
 echo "Start update Octopus"
 echo ""
 make clean
-#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.octopus
+make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.octopus
 make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.octopus
 #read -p "Octopus firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
 cd ~/CanBoot/scripts
