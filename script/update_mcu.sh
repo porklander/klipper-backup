@@ -7,42 +7,37 @@ sudo service klipper stop
 
 
 # Update head0
-#echo "Start update SB2040"
-#echo ""
-#make clean
-#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.sb2040
-#make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.sb2040
-#read -p "sb2040 firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
-#cd ~/CanBoot/scripts
-#python3 flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u b3b97721329d
-##read -p "sb2040 firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
-#echo "Finish update sb2040"
-#echo ""
+make clean
+#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.head0
+make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.head0
+python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u b3b97721329d
+
+# mcu ercf_selector(stm32f072xb)
+make clean
+#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ercf_selector
+make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ercf_selector
+python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u ba51b493cff4
+
+# mcu ercf_gear(stm32g0b1xx)
+make clean
+#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ercf_gear
+make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.ercf_gear
+python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 8dfc54033d32
+
 
 # Update mcu rpi
-#echo "Start update mcu rpi"
-#echo ""
-#cd ~/klipper
-#make clean
+cd ~/klipper
+make clean
 #make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.linux_mcu
-#make KCONFIG=/home/pi/klipper_config/script/config.linux_mcu
-#read -p "mcu rpi firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
-#sudo service klipper stop
-#make flash KCONFIG_CONFIG=/home/pi/klipper_config/script/config.linux_mcu
-#echo "Finish update mcu rpi"
-#echo ""
+make KCONFIG=/home/pi/klipper_config/script/config.linux_mcu
+make flash KCONFIG_CONFIG=/home/pi/klipper_config/script/config.linux_mcu
+
 
 # Update Octopus
-echo "Start update Octopus"
-echo ""
 make clean
-make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.octopus
+#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.octopus
 make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.octopus
-#read -p "Octopus firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
-cd ~/CanBoot/scripts
-python3 flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u ae6af168e91b
-#read -p "EBB firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
-echo "Finish update Octopus"
-echo ""
+./scripts/flash-sdcard.sh /dev/ttyAMA0 btt-octopus-pro-f446-v1.0
+
 
 sudo service klipper start
