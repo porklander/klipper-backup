@@ -11,6 +11,12 @@ ercf_calib_6 = 1.0
 ercf_calib_7 = 1.0
 ercf_calib_8 = 1.0
 ercf_calib_9 = 1.0
-ercf_calib_ref = 1060.6
-ercf_calib_version = 2
+ercf_calib_clog_length = 20.4
+ercf_calib_ref = 785.0
+ercf_calib_version = 3
+ercf_state_gate_selected = 0
+ercf_state_gate_status = [1, -1, -1, -1, -1, -1, -1, -1, -1]
+ercf_state_loaded_status = -1
+ercf_state_tool_selected = 0
+ercf_state_tool_to_gate_map = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
