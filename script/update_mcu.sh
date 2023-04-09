@@ -8,9 +8,9 @@ sudo service klipper stop
 
 # Update head0
 make clean
-#make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.head0
+make menuconfig KCONFIG_CONFIG=/home/pi/klipper_config/script/config.head0
 make KCONFIG_CONFIG=/home/pi/klipper_config/script/config.head0
-python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u b3b97721329d
+python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 6281f291f6c4
 
 # mcu ercf_selector(stm32f072xb)
 make clean
